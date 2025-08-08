@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Apopotos:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 32px;
+            font-family: 'Apopotos', Arial, sans-serif;
+            background: #fff;
+        }
+        .signature-container {
+            max-width: 820px;
+            min-width: 420px;
+            margin: 0 auto;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+        }
+        .signature {
+            display: flex;
+            align-items: stretch;
+            position: relative;
+            padding: 0;
+            min-height: 120px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .signature-canvas-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+        .logo-section {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            height: 100%;
+            z-index: 2;
+            margin-right: 40px;
+        }
+        .logo-section a {
+            display: flex;
+            align-items: stretch;
+            height: 100%;
+        }
+        .logo-section img {
+            height: 100%;
+            max-height: 120px;
+            width: auto;
+            display: block;
+            background: #fff;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+        }
+        .info-section {
+            flex: 1;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 24px 0 24px 0;
+        }
+        .name {
+            font-family: 'Adamina', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            color: #242527;
+            letter-spacing: 1px;
+            text-transform: none;
+        }
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+            color: #242527;
+            letter-spacing: 1px;
+            text-transform: none;
+            font-family: 'Apopotos', Arial, sans-serif;
+        }
+        .tagline {
+            font-size: 15px;
+            font-weight: 400;
+            margin: 0 0 18px 0;
+            color: #6b6b6b;
+            letter-spacing: 0.5px;
+            font-family: 'Apopotos', Arial, sans-serif;
+        }
+        .contact-info {
+            color: #29434E;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Apopotos', Arial, sans-serif;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+        .team-email {
+            color: #29434E;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1.5px dotted #bdbdbd;
+            transition: color 0.2s;
+        }
+        .team-email:hover {
+            color: #6b6b6b;
+        }
+        .divider {
+            width: 100%;
+            border: none;
+            border-top: 1.5px solid #bdbdbd;
+            margin: 0 0 12px 0;
+        }
+        .legal {
+            font-size: 10px;
+            color: #888;
+            font-family: 'Apopotos', Arial, sans-serif;
+            line-height: 1.5;
+            margin-top: 10px;
+            margin-bottom: 0;
+            white-space: pre-line;
+        }
+        /* Email client compatibility */
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        .signature * {
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        @media (max-width: 700px) {
+            .signature {
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 0;
+            }
+            .logo-section {
+                margin-right: 0;
+                margin-bottom: 18px;
+            }
+            .logo-section img {
+                max-height: 80px;
+            }
+            .info-section {
+                padding: 18px 0 18px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- This is your signature - copy the content inside this container -->
+    <div class="signature-container">
+        <div class="signature">
+            <canvas class="signature-canvas-bg"></canvas>
+            <div class="logo-section">
+                <a href="https://ourfuturehealth.org.uk/" target="_blank" rel="noopener">
+                    <img src="https://i.postimg.cc/XZyR0bJP/our-future-health-logo.png" alt="Our Future Health Logo" />
+                </a>
+            </div>
+            <div class="info-section">
+                <div class="name">Ibrahim Yussuf</div>
+                <div class="title">Quality operations coordinator</div>
+                <div class="tagline">Let’s prevent disease together.</div>
+                <div class="contact-info">
+                    Team: <a href="mailto:qualityoperations@ourfuturehealth.org.uk" class="team-email">qualityoperations@ourfuturehealth.org.uk</a>
+                </div>
+            </div>
+        </div>
+        <hr class="divider" />
+        <div class="legal">
+Our Future Health is a company limited by guarantee registered in England and Wales (number 12212468) and a charity registered with the Charity Commission for England and Wales (charity number 1189681) and OSCR, Scottish Charity Regulator (charity number SC050917). Registered office: 2 New Bailey, 6 Stanley Street, Manchester M3 5GS
+
+Confidentiality: The information in this email, including any files attached to it, is confidential and solely for the use of the intended recipient(s). If you receive this email in error, you must not copy or show them to anyone; please reply to this email and highlight the error to the sender and then immediately delete the message. You are hereby notified that any disclosure, copying, distribution or taking action in relation of the contents of this information is strictly prohibited. Unless expressly agreed in writing, Our Future Health accepts no liability to persons other than clients of the company in respect of the contents of emails or its contents.
+        </div>
+    </div>
+    <script>
+    // Particle effect with increased yellow particles
+    (function() {
+        var canvas = document.querySelector('.signature-canvas-bg');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        var dpr = window.devicePixelRatio || 1;
+        var width, height, particles;
+        var PARTICLE_COLOR = '#212B39'; // Oxford Blue
+        var PARTICLE_COUNT = 100;
+        var PARTICLE_SIZE = 2.2;
+        var PARTICLE_OPACITY = 0.20;
+        function resize() {
+            var parent = canvas.parentElement;
+            width = parent.offsetWidth;
+            height = parent.offsetHeight;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.scale(dpr, dpr);
+        }
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        function createParticles() {
+            particles = [];
+            for (var i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push({
+                    x: random(0, width),
+                    y: random(0, height),
+                    r: PARTICLE_SIZE + random(-0.7, 1.2),
+                    dx: random(-0.12, 0.12),
+                    dy: random(-0.12, 0.12),
+                    opacity: PARTICLE_OPACITY + random(-0.05, 0.05)
+                });
+            }
+        }
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                ctx.globalAlpha = p.opacity;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+                ctx.fillStyle = PARTICLE_COLOR;
+                ctx.fill();
+                p.x += p.dx;
+                p.y += p.dy;
+                if (p.x < 0 || p.x > width) p.dx *= -1;
+                if (p.y < 0 || p.y > height) p.dy *= -1;
+            }
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(animate);
+        }
+        function init() {
+            resize();
+            createParticles();
+            animate();
+        }
+        window.addEventListener('resize', function() {
+            resize();
+            createParticles();
+        });
+        setTimeout(init, 100);
+    })();
+    </script>
+</body>
+</html>

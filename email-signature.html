@@ -39,6 +39,24 @@
                 repeating-linear-gradient(45deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 4px);
             background-size: 8px 8px, 8px 8px;
             background-position: 0 0, 4px 4px;
+            animation: ditherWave 18s cubic-bezier(0.77,0,0.18,1) infinite alternate;
+        }
+        @keyframes ditherWave {
+            0% {
+                background-position: 0 0, 4px 4px;
+            }
+            25% {
+                background-position: 8px 4px, 12px 8px;
+            }
+            50% {
+                background-position: 16px 8px, 20px 12px;
+            }
+            75% {
+                background-position: 8px 4px, 12px 8px;
+            }
+            100% {
+                background-position: 0 0, 4px 4px;
+            }
         }
         .logo-section {
             flex: 0 0 auto;

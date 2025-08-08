@@ -31,38 +31,39 @@
             padding: 0;
             min-height: 120px;
             background: #fff;
+            overflow: hidden;
         }
-        /* Aurora dithered background */
+        /* Aurora dithered background for email (CSS only) */
         .signature::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             z-index: 0;
             background:
+                linear-gradient(120deg, #f7f7f7 0%, #e0e0e0 100%),
+                repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%),
+                repeating-linear-gradient(100deg, #0F181E 0%, #0F181E 7%, transparent 10%, transparent 12%, #0F181E 16%),
                 radial-gradient(ellipse 60% 40% at 30% 30%, #0F181E 0%, transparent 80%),
                 radial-gradient(ellipse 50% 30% at 70% 60%, #e0e0e0 0%, transparent 80%),
-                radial-gradient(ellipse 40% 20% at 60% 20%, #f7f7f7 0%, transparent 80%),
-                repeating-linear-gradient(135deg, #f7f7f7 0px, #f7f7f7 2px, #e0e0e0 2px, #e0e0e0 4px),
-                repeating-linear-gradient(45deg, #e0e0e0 0px, #e0e0e0 2px, #f7f7f7 2px, #f7f7f7 4px);
-            background-size: 100% 100%, 100% 100%, 100% 100%, 16px 16px, 24px 24px;
+                radial-gradient(ellipse 40% 20% at 60% 20%, #f7f7f7 0%, transparent 80%);
+            background-blend-mode: lighten, lighten, darken, normal, normal, normal;
+            background-size: 300% 200%, 200% 100%, 200% 100%, 100% 100%, 100% 100%, 100% 100%;
+            background-position: 50% 50%, 50% 50%, 50% 50%, 30% 30%, 70% 60%, 60% 20%;
             opacity: 0.8;
-            animation: auroraDither 8s ease-in-out infinite alternate;
+            animation: auroraDither 30s linear infinite alternate;
         }
         @keyframes auroraDither {
             0% {
                 background-position:
-                    30% 30%, 70% 60%, 60% 20%, 0 0, 0 0;
-                opacity: 0.8;
+                    50% 50%, 50% 50%, 50% 50%, 30% 30%, 70% 60%, 60% 20%;
             }
             50% {
                 background-position:
-                    35% 35%, 65% 65%, 55% 25%, 8px 8px, 12px 12px;
-                opacity: 1;
+                    60% 60%, 60% 60%, 40% 40%, 35% 35%, 65% 65%, 55% 25%;
             }
             100% {
                 background-position:
-                    25% 25%, 75% 55%, 65% 15%, 0 0, 0 0;
-                opacity: 0.8;
+                    40% 40%, 40% 40%, 60% 60%, 25% 25%, 75% 55%, 65% 15%;
             }
         }
         .logo-section {
@@ -104,7 +105,6 @@
             margin: 0 0 4px 0;
             color: #242527;
             letter-spacing: 1px;
-            text-shadow: 0 1.5px 0 #fff, 0 0.5px 0 #e0e0e0;
             text-transform: none;
         }
         .title {

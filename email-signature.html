@@ -32,13 +32,13 @@
             min-height: 120px;
             background: #fff;
             overflow: hidden;
-        }
-        .signature-canvas-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            display: block;
+            /* Dither pattern inspired by reactbits.dev */
+            background-color: #fff;
+            background-image:
+                repeating-linear-gradient(135deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 4px),
+                repeating-linear-gradient(45deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 4px);
+            background-size: 8px 8px, 8px 8px;
+            background-position: 0 0, 4px 4px;
         }
         .logo-section {
             flex: 0 0 auto;
@@ -166,7 +166,6 @@
     <!-- This is your signature - copy the content inside this container -->
     <div class="signature-container">
         <div class="signature">
-            <canvas class="signature-canvas-bg"></canvas>
             <div class="logo-section">
                 <a href="https://ourfuturehealth.org.uk/" target="_blank" rel="noopener">
                     <img src="https://i.postimg.cc/XZyR0bJP/our-future-health-logo.png" alt="Our Future Health Logo" />
@@ -188,73 +187,5 @@ Our Future Health is a company limited by guarantee registered in England and Wa
 Confidentiality: The information in this email, including any files attached to it, is confidential and solely for the use of the intended recipient(s). If you receive this email in error, you must not copy or show them to anyone; please reply to this email and highlight the error to the sender and then immediately delete the message. You are hereby notified that any disclosure, copying, distribution or taking action in relation of the contents of this information is strictly prohibited. Unless expressly agreed in writing, Our Future Health accepts no liability to persons other than clients of the company in respect of the contents of emails or its contents.
         </div>
     </div>
-    <script>
-    // Light version of https://codepen.io/Lov/pen/pbJEZo with OFH yellow particles
-    (function() {
-        var canvas = document.querySelector('.signature-canvas-bg');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        var dpr = window.devicePixelRatio || 1;
-        var width, height, particles;
-        var PARTICLE_COLOR = '#E4CA99'; // OFH yellow
-        var PARTICLE_COUNT = 32;
-        var PARTICLE_SIZE = 2.2;
-        var PARTICLE_OPACITY = 0.18;
-        function resize() {
-            var parent = canvas.parentElement;
-            width = parent.offsetWidth;
-            height = parent.offsetHeight;
-            canvas.width = width * dpr;
-            canvas.height = height * dpr;
-            canvas.style.width = width + 'px';
-            canvas.style.height = height + 'px';
-            ctx.setTransform(1, 0, 0, 1, 0, 0);
-            ctx.scale(dpr, dpr);
-        }
-        function random(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-        function createParticles() {
-            particles = [];
-            for (var i = 0; i < PARTICLE_COUNT; i++) {
-                particles.push({
-                    x: random(0, width),
-                    y: random(0, height),
-                    r: PARTICLE_SIZE + random(-0.7, 1.2),
-                    dx: random(-0.12, 0.12),
-                    dy: random(-0.12, 0.12),
-                    opacity: PARTICLE_OPACITY + random(-0.05, 0.05)
-                });
-            }
-        }
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            for (var i = 0; i < particles.length; i++) {
-                var p = particles[i];
-                ctx.globalAlpha = p.opacity;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
-                ctx.fillStyle = PARTICLE_COLOR;
-                ctx.fill();
-                p.x += p.dx;
-                p.y += p.dy;
-                if (p.x < 0 || p.x > width) p.dx *= -1;
-                if (p.y < 0 || p.y > height) p.dy *= -1;
-            }
-            ctx.globalAlpha = 1;
-            requestAnimationFrame(animate);
-        }
-        function init() {
-            resize();
-            createParticles();
-            animate();
-        }
-        window.addEventListener('resize', function() {
-            resize();
-            createParticles();
-        });
-        setTimeout(init, 100);
-    })();
-    </script>
 </body>
 </html>

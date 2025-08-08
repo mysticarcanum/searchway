@@ -30,33 +30,8 @@
             position: relative;
             padding: 0;
             min-height: 120px;
-            background: #fff;
+            background: transparent;
             overflow: hidden;
-            /* Dither pattern inspired by reactbits.dev */
-            background-color: #fff;
-            background-image:
-                repeating-linear-gradient(135deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 4px),
-                repeating-linear-gradient(45deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 4px);
-            background-size: 8px 8px, 8px 8px;
-            background-position: 0 0, 4px 4px;
-            animation: ditherWave 18s cubic-bezier(0.77,0,0.18,1) infinite alternate;
-        }
-        @keyframes ditherWave {
-            0% {
-                background-position: 0 0, 4px 4px;
-            }
-            25% {
-                background-position: 8px 4px, 12px 8px;
-            }
-            50% {
-                background-position: 16px 8px, 20px 12px;
-            }
-            75% {
-                background-position: 8px 4px, 12px 8px;
-            }
-            100% {
-                background-position: 0 0, 4px 4px;
-            }
         }
         .logo-section {
             flex: 0 0 auto;
@@ -182,28 +157,34 @@
 </head>
 <body>
     <!-- This is your signature - copy the content inside this container -->
-    <div class="signature-container">
-        <div class="signature">
-            <div class="logo-section">
-                <a href="https://ourfuturehealth.org.uk/" target="_blank" rel="noopener">
-                    <img src="https://i.postimg.cc/XZyR0bJP/our-future-health-logo.png" alt="Our Future Health Logo" />
-                </a>
-            </div>
-            <div class="info-section">
-                <div class="name">Ibrahim Yussuf</div>
-                <div class="title">Quality operations coordinator</div>
-                <div class="tagline">Let’s prevent disease together.</div>
-                <div class="contact-info">
-                    Team: <a href="mailto:qualityoperations@ourfuturehealth.org.uk" class="team-email">qualityoperations@ourfuturehealth.org.uk</a>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #fff url('https://i.imgur.com/4M7IWwP.gif') repeat;">
+      <tr>
+        <td>
+          <div class="signature-container">
+            <div class="signature">
+                <div class="logo-section">
+                    <a href="https://ourfuturehealth.org.uk/" target="_blank" rel="noopener">
+                        <img src="https://i.postimg.cc/XZyR0bJP/our-future-health-logo.png" alt="Our Future Health Logo" />
+                    </a>
+                </div>
+                <div class="info-section">
+                    <div class="name">Ibrahim Yussuf</div>
+                    <div class="title">Quality operations coordinator</div>
+                    <div class="tagline">Let’s prevent disease together.</div>
+                    <div class="contact-info">
+                        Team: <a href="mailto:qualityoperations@ourfuturehealth.org.uk" class="team-email">qualityoperations@ourfuturehealth.org.uk</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr class="divider" />
-        <div class="legal">
+            <hr class="divider" />
+            <div class="legal">
 Our Future Health is a company limited by guarantee registered in England and Wales (number 12212468) and a charity registered with the Charity Commission for England and Wales (charity number 1189681) and OSCR, Scottish Charity Regulator (charity number SC050917). Registered office: 2 New Bailey, 6 Stanley Street, Manchester M3 5GS
 
 Confidentiality: The information in this email, including any files attached to it, is confidential and solely for the use of the intended recipient(s). If you receive this email in error, you must not copy or show them to anyone; please reply to this email and highlight the error to the sender and then immediately delete the message. You are hereby notified that any disclosure, copying, distribution or taking action in relation of the contents of this information is strictly prohibited. Unless expressly agreed in writing, Our Future Health accepts no liability to persons other than clients of the company in respect of the contents of emails or its contents.
-        </div>
-    </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
 </body>
 </html>

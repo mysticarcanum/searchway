@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Apopotos:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Apopotos', Arial, sans-serif;
+            background: #f8f6f2;
+        }
+        .signature-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fffbe9;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(41,67,78,0.13), 0 1.5px 0 #e4ca99 inset;
+            border: 1.5px solid #e4ca99;
+        }
+        .signature {
+            position: relative;
+            padding: 32px 28px 24px 28px;
+            background: linear-gradient(135deg, #fffbe9 0%, #f8f6f2 100%);
+            color: #2d2d2d;
+            font-family: 'Apopotos', Arial, sans-serif;
+            overflow: hidden;
+        }
+        /* Dithered retro background */
+        .signature::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 3px, #f8f6f2 3px, #f8f6f2 6px),
+                repeating-linear-gradient(90deg, transparent, transparent 3px, #fffbe9 3px, #fffbe9 6px);
+            background-size: 12px 12px, 12px 12px;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .signature::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(circle at 30% 30%, #e4ca99 1.5px, transparent 2.5px),
+                radial-gradient(circle at 70% 70%, #e29354 1.5px, transparent 2.5px);
+            background-size: 18px 18px, 24px 24px;
+            opacity: 0.25;
+            z-index: 2;
+        }
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 3;
+        }
+        .logo {
+            width: 54px;
+            height: 54px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #e4ca99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            border: 1.5px solid #e29354;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+        .company-info {
+            flex: 1;
+        }
+        .company {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #29434E;
+            font-family: 'Apopotos', Arial, sans-serif;
+        }
+        .tagline {
+            font-size: 11px;
+            font-weight: 400;
+            margin: 0;
+            color: #29434E;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+            font-family: 'Apopotos', Arial, sans-serif;
+        }
+        .name {
+            font-family: 'Aboreto', cursive;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            position: relative;
+            z-index: 3;
+            color: #29434E;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 0 #fffbe9, 0 0.5px 0 #e4ca99;
+        }
+        .title {
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 18px 0;
+            position: relative;
+            z-index: 3;
+            color: #e29354;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Apopotos', Arial, sans-serif;
+            text-shadow: 0 1px 0 #fffbe9;
+        }
+        .contact-info {
+            background: linear-gradient(90deg, #e4ca99 0%, #fffbe9 100%);
+            color: #29434E;
+            padding: 13px 18px;
+            margin: 0;
+            font-size: 13px;
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Apopotos', Arial, sans-serif;
+            letter-spacing: 0.5px;
+            border-top: 1.5px solid #e4ca99;
+        }
+        .team-email {
+            color: #29434E;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1.5px dotted #e29354;
+            transition: color 0.2s;
+        }
+        .team-email:hover {
+            color: #e29354;
+        }
+        /* Email client compatibility */
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        /* Pixel perfect edges */
+        .signature * {
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+    </style>
+</head>
+<body>
+    <!-- This is your signature - copy the content inside this container -->
+    <div class="signature-container">
+        <div class="signature">
+            <div class="header-section">
+                <div class="logo">
+                    <img src="https://i.postimg.cc/XZyR0bJP/our-future-health-logo.png" alt="Our Future Health Logo" />
+                </div>
+                <div class="company-info">
+                    <div class="company">Our Future Health</div>
+                    <div class="tagline">Building tomorrow's healthcare today</div>
+                </div>
+            </div>
+            <div class="name">Ibrahim Yussuf</div>
+            <div class="title">Quality Operations Coordinator</div>
+        </div>
+        <div class="contact-info">
+            Team: <a href="mailto:qualityoperations@ourfuturehealth.org.uk" class="team-email">qualityoperations@ourfuturehealth.org.uk</a><br>
+            <span style="font-size:11px; color:#e29354; font-family:'Apopotos', Arial, sans-serif;">Best regards, Ibrahim Yussuf</span>
+        </div>
+    </div>
+    <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        <h3 style="color: #333; margin-top: 0; font-family: 'Aboreto', cursive;">Retro-Futuristic Email Signature!</h3>
+        <ul style="color: #666; line-height: 1.6; font-family: 'Apopotos', Arial, sans-serif;">
+            <li><strong>Design:</strong> Clean retro-futurist card with dithered cream/white background</li>
+            <li><strong>Colors:</strong> Cream, white, buff, sunset orange, charcoal</li>
+            <li><strong>Logo:</strong> Our Future Health branding integrated</li>
+            <li><strong>Typography:</strong> Aboreto for name, Apopotos for body</li>
+        </ul>
+        <p style="color: #888; font-size: 12px; margin-bottom: 0; font-family: 'Apopotos', Arial, sans-serif;"><strong>Installation:</strong> Copy the signature content and paste into your email client</p>
+    </div>
+</body>
+</html>

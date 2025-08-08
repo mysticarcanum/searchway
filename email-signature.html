@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Signature</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Apopotos:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Apopotos:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -14,7 +15,7 @@
             background: #fff;
         }
         .signature-container {
-            max-width: 720px;
+            max-width: 820px;
             min-width: 420px;
             margin: 0 auto;
             background: none;
@@ -25,22 +26,22 @@
         }
         .signature {
             display: flex;
-            align-items: center;
+            align-items: stretch;
             position: relative;
             padding: 0;
             min-height: 120px;
             background: #fff;
         }
-        /* Animated dithered background inspired by provided image */
+        /* Animated grey and white dithered background */
         .signature::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             z-index: 0;
             background-image:
-                repeating-linear-gradient(135deg, #f8f6f2 0px, #f8f6f2 2px, #eae6da 2px, #eae6da 4px),
-                repeating-linear-gradient(45deg, #eae6da 0px, #eae6da 2px, #f8f6f2 2px, #f8f6f2 4px),
-                repeating-linear-gradient(90deg, #eae6da 0px, #eae6da 1.5px, #f8f6f2 1.5px, #f8f6f2 3px);
+                repeating-linear-gradient(135deg, #f7f7f7 0px, #f7f7f7 2px, #e0e0e0 2px, #e0e0e0 4px),
+                repeating-linear-gradient(45deg, #e0e0e0 0px, #e0e0e0 2px, #f7f7f7 2px, #f7f7f7 4px),
+                repeating-linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1.5px, #f7f7f7 1.5px, #f7f7f7 3px);
             background-size: 16px 16px, 24px 24px, 32px 32px;
             opacity: 0.7;
             animation: ditherMove 12s linear infinite;
@@ -50,28 +51,28 @@
             100% { background-position: 32px 32px, 48px 48px, 64px 64px; }
         }
         .logo-section {
-            flex: 0 0 80px;
+            flex: 0 0 auto;
             display: flex;
-            align-items: center;
+            align-items: stretch;
             justify-content: center;
             height: 100%;
             z-index: 2;
-            margin-right: 32px;
+            margin-right: 40px;
         }
         .logo-section a {
-            display: inline-block;
-            border-radius: 10px;
-            transition: box-shadow 0.2s;
-        }
-        .logo-section a:hover {
-            box-shadow: 0 0 0 3px #eae6da;
+            display: flex;
+            align-items: stretch;
+            height: 100%;
         }
         .logo-section img {
-            width: 60px;
-            height: 60px;
+            height: 100%;
+            max-height: 120px;
+            width: auto;
             display: block;
             background: #fff;
-            border-radius: 10px;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
         }
         .info-section {
             flex: 1;
@@ -79,46 +80,38 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-        .company {
-            font-size: 18px;
-            font-weight: 700;
-            margin: 0 0 2px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #29434E;
-            font-family: 'Apopotos', Arial, sans-serif;
-        }
-        .tagline {
-            font-size: 13px;
-            font-weight: 400;
-            margin: 0 0 14px 0;
-            color: #6b6b6b;
-            letter-spacing: 0.5px;
-            font-family: 'Apopotos', Arial, sans-serif;
+            padding: 24px 0 24px 0;
         }
         .name {
-            font-family: 'Aboreto', cursive;
-            font-size: 26px;
+            font-family: 'Adamina', serif;
+            font-size: 28px;
             font-weight: 700;
             margin: 0 0 4px 0;
             color: #29434E;
             letter-spacing: 1px;
-            text-shadow: 0 1.5px 0 #fff, 0 0.5px 0 #eae6da;
+            text-shadow: 0 1.5px 0 #fff, 0 0.5px 0 #e0e0e0;
             text-transform: none;
         }
         .title {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
-            margin: 0 0 12px 0;
+            margin: 0 0 10px 0;
             color: #7d7d7d;
             letter-spacing: 1px;
-            text-transform: uppercase;
+            text-transform: none;
+            font-family: 'Apopotos', Arial, sans-serif;
+        }
+        .tagline {
+            font-size: 15px;
+            font-weight: 400;
+            margin: 0 0 18px 0;
+            color: #6b6b6b;
+            letter-spacing: 0.5px;
             font-family: 'Apopotos', Arial, sans-serif;
         }
         .contact-info {
             color: #29434E;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             font-family: 'Apopotos', Arial, sans-serif;
             letter-spacing: 0.5px;
@@ -134,6 +127,21 @@
         .team-email:hover {
             color: #6b6b6b;
         }
+        .divider {
+            width: 100%;
+            border: none;
+            border-top: 1.5px solid #bdbdbd;
+            margin: 0 0 12px 0;
+        }
+        .legal {
+            font-size: 10px;
+            color: #888;
+            font-family: 'Apopotos', Arial, sans-serif;
+            line-height: 1.5;
+            margin-top: 10px;
+            margin-bottom: 0;
+            white-space: pre-line;
+        }
         /* Email client compatibility */
         table {
             border-collapse: collapse;
@@ -146,7 +154,7 @@
             image-rendering: pixelated;
             image-rendering: crisp-edges;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .signature {
                 flex-direction: column;
                 align-items: flex-start;
@@ -155,6 +163,12 @@
             .logo-section {
                 margin-right: 0;
                 margin-bottom: 18px;
+            }
+            .logo-section img {
+                max-height: 80px;
+            }
+            .info-section {
+                padding: 18px 0 18px 0;
             }
         }
     </style>
@@ -169,14 +183,19 @@
                 </a>
             </div>
             <div class="info-section">
-                <div class="company">Our Future Health</div>
-                <div class="tagline">Let’s prevent disease together.</div>
                 <div class="name">Ibrahim Yussuf</div>
-                <div class="title">Quality Operations Coordinator</div>
+                <div class="title">Quality operations coordinator</div>
+                <div class="tagline">Let’s prevent disease together.</div>
                 <div class="contact-info">
                     Team: <a href="mailto:qualityoperations@ourfuturehealth.org.uk" class="team-email">qualityoperations@ourfuturehealth.org.uk</a>
                 </div>
             </div>
+        </div>
+        <hr class="divider" />
+        <div class="legal">
+Our Future Health is a company limited by guarantee registered in England and Wales (number 12212468) and a charity registered with the Charity Commission for England and Wales (charity number 1189681) and OSCR, Scottish Charity Regulator (charity number SC050917). Registered office: 2 New Bailey, 6 Stanley Street, Manchester M3 5GS
+
+Confidentiality: The information in this email, including any files attached to it, is confidential and solely for the use of the intended recipient(s). If you receive this email in error, you must not copy or show them to anyone; please reply to this email and highlight the error to the sender and then immediately delete the message. You are hereby notified that any disclosure, copying, distribution or taking action in relation of the contents of this information is strictly prohibited. Unless expressly agreed in writing, Our Future Health accepts no liability to persons other than clients of the company in respect of the contents of emails or its contents.
         </div>
     </div>
 </body>
